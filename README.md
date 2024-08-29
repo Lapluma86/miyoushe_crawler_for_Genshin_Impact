@@ -47,7 +47,7 @@
 所有爬取的数据均以`json`格式保存在`data`文件夹下。
 
 ## 许可证
-本项目采用 MIT 许可证。
+本项目采用 [MIT](https://github.com/sundowner00/miyoushe_crawler_for_Genshin_Impact/blob/main/LICENSE) 许可证。
 
 ## 联系方式
 如有任何问题或建议，请通过 [GitHub](https://github.com/sundowner00) 联系我。
