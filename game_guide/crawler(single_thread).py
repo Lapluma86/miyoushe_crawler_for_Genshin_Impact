@@ -76,7 +76,7 @@ def fetch_proxies_from_api():
     global proxy_pool
     try:
         # API请求
-        api_url = 'http://www.zdopen.com/ShortProxy/GetIP/?api=202408122107317101&akey=ee2cbc5f20ab8905&timespan=3&type=3'
+        api_url = ''
         response = requests.get(api_url)
         if response.status_code == 200:
             proxy_data = response.json()
@@ -111,8 +111,8 @@ def crawler(post_ids):
     global valid_posts_count
 
     proxy = get_proxy()  # 初始时获取一个代理IP
-    username = '202408122107317101'
-    password = '36490456'
+    username = ''
+    password = ''
 
     for post_id in post_ids:
         if not proxy:

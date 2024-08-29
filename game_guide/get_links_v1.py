@@ -13,7 +13,7 @@ def init_browser():
     global driver
     if driver is None:
         # 初始化Chrome浏览器
-        service = Service("C:\\Users\\sundowner\\Desktop\\chromedriver-win64\\chromedriver.exe")  # 替换为你的chromedriver路径
+        service = Service("")  # 替换为你的chromedriver路径
         options = webdriver.ChromeOptions()
         options.add_argument('--headless')  # 如果不需要浏览器界面，可以启用无头模式
         driver = webdriver.Chrome(service=service, options=options)
@@ -71,7 +71,7 @@ def get_links():
         links = parse_html(html)
         return links
 
-def write_links_to_file(links, file_path='D:\PycharmProjects\ACG-Game-Q-A-LLM\clawler\links.txt'):
+def write_links_to_file(links, file_path=''):
     with open(file_path, 'a', encoding='utf-8') as file:
         for link in links:
             file.write(link + '\n')

@@ -33,7 +33,7 @@ def fetch_page(url, proxy=None, headers=None, headless=True):
     if proxy:
         chrome_options.add_argument(f'--proxy-server={proxy}')
 
-    chrome_driver_path = "C:\\Users\\sundowner\\Desktop\\chromedriver-win64\\chromedriver.exe"  # 替换为你的 chromedriver 路径
+    chrome_driver_path = ""  # 替换为你的 chromedriver 路径
     service = Service(chrome_driver_path)
 
     if not headers:

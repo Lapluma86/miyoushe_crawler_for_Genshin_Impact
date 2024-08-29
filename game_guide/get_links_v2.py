@@ -5,7 +5,7 @@ def generate_fake_ua():
     ua = UserAgent()
     return ua.random
 
-def write_links_to_file(links, file_path='D:\\PycharmProjects\\ACG-Game-Q-A-LLM\\clawler\\links.txt'):
+def write_links_to_file(links, file_path=''):
     with open(file_path, 'a', encoding='utf-8') as file:
         for link in links:
             file.write(link + '\n')

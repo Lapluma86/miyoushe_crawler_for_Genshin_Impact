@@ -67,7 +67,7 @@ def fetch_proxies_from_api():
     global proxy_pool
     while not terminate_threads.is_set():
         try:
-            api_url = 'http://www.zdopen.com/ShortProxy/GetIP/?api=202408122107317101&akey=ee2cbc5f20ab8905&timespan=3&type=3'
+            api_url = ''
             response = requests.get(api_url)
             response.raise_for_status()  # 检查请求状态
             proxy_data = response.json()
@@ -100,8 +100,8 @@ def crawler(post_id_queue, thread_name):
         proxy = get_proxy()
         if proxy is None:
             return
-        username = '202408122107317101'
-        password = '36490456'
+        username = ''
+        password = ' '
 
         while not post_id_queue.empty() and not terminate_threads.is_set():
             post_id = post_id_queue.get()
@@ -224,54 +224,3 @@ if __name__ == "__main__":
     main()
 
 
-# 单线程
-# def crawler_demo(post_id):
-#     url = 'https://bbs-api.miyoushe.com/post/wapi/getPostFull'
-#     params = {
-#         'gids': '2',
-#         'post_id': post_id,
-#         'read': '1',
-#     }
-#
-#     proxy = '183.166.119.121:46455'
-#     proxies = {
-#         'http': f'http://{proxy}',
-#         'https': f'http://{proxy}'
-#     }
-#
-#     headers = {
-#         'Referer': 'https://www.miyoushe.com/',
-#         'User-Agent': generate_fake_ua()
-#     }
-#
-#     try:
-#         response = requests.get(url, headers=headers, params=params, proxies=proxies)
-#         response.raise_for_status()  # Raise an HTTPError for bad responses (4xx and 5xx)
-#
-#     except requests.exceptions.ProxyError:
-#         print(f"[ProxyError] Proxy failed for post_id: {post_id}. Retrying with a new proxy...")
-#         # 可以在这里添加逻辑来更换代理或者重试
-#         time.sleep(2)  # 等待2秒后重试
-#         return crawler_demo(post_id)
-#
-#     except requests.exceptions.RequestException as e:
-#         print(f"[RequestException] Failed to fetch data for post_id: {post_id}, error: {e}")
-#         return
-#
-#     response_json = response.json()
-#     if response_json['data'] is None:
-#         print(f"Failed to fetch data: empty response, post_id: {post_id}")
-#         return
-#
-#     game_guide = Game_Guide(response_json)
-#
-#     if is_article_valid(game_guide):
-#         write_to_file(f'mohiyo-&原神-{post_id}.json', game_guide, 'data')
-#     else:
-#         print(f"Invalid article content for post_id: {post_id}")
-#
-# # 示例链接列表
-# links = [1418237, 1738781, 1752674, 1804362, 1836375, 1876297, 2032178, 2237835, 2246421, 2274435]
-#
-# for i in range(10):
-#     crawler_demo(links[i])
