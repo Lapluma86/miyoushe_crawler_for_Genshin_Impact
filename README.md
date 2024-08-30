@@ -3,7 +3,7 @@
 ## 简介
 一个从米游社爬取原神相关信息的爬虫  
 
-本项目是[ACG-Game-Q-A-LLM](https://github.com/Whale-Dolphin/ACG-Game-Q-A-LLM)项目的数据获取部分，为训练模型提供原神相关的基础数据，仅作学习交流使用，不得用于商业用途。
+本项目是 [ACG-Game-Q-A-LLM](https://github.com/Whale-Dolphin/ACG-Game-Q-A-LLM) 项目的数据获取部分，为训练模型提供原神相关的基础数据，仅作学习交流使用，不得用于商业用途。
 
 ## 功能
 目前已实现：
